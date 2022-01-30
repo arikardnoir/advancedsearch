@@ -1,7 +1,6 @@
 package advancedsearch
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -35,14 +34,4 @@ func CompareMultipleWords(compare string, compared []string) (bool, []string) {
 	}
 
 	return res, finalArray
-}
-
-func main() {
-	CompareSingleWord("Ma", "Macbook")
-
-	arrayToPass := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
-	isTrue, elements := CompareMultipleWords("Macab", arrayToPass)
-
-	fmt.Printf("Boolean: %t", isTrue)
-	fmt.Printf("Elements: %v", elements)
 }
