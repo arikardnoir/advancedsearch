@@ -1,9 +1,14 @@
 package advancedsearch
 
-func CompareSingleWord(compare string, comapared string) bool {
-	if compare[0] == comapared[0] {
+import (
+	"fmt"
+	"sort"
+)
+
+func CompareSingleWord(compare string, compared string) bool {
+	if compare[0] == compared[0] {
 		for j := 0; j < len(compare)-1; j++ {
-			if compare[j+1] == comapared[j+1] {
+			if compare[j+1] == compared[j+1] {
 				continue
 			} else {
 				return false
@@ -13,6 +18,31 @@ func CompareSingleWord(compare string, comapared string) bool {
 	return true
 }
 
+func CompareMultipleWords(compare string, compared []string) (bool, []string) {
+	sort.Strings(compared)
+	finalArray := make([]string, 0, len(compare))
+	var res bool = false
+
+	for i := 0; i < len(compared); i++ {
+		word := compared[i]
+
+		if compare[0] == word[0] {
+			if CompareSingleWord(compare, compared[i]) {
+				res = true
+				finalArray = append(finalArray, compared[i])
+			}
+		}
+	}
+
+	return res, finalArray
+}
+
 func main() {
 	CompareSingleWord("Ma", "Macbook")
+
+	arrayToPass := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
+	isTrue, elements := CompareMultipleWords("Macab", arrayToPass)
+
+	fmt.Printf("Boolean: %t", isTrue)
+	fmt.Printf("Elements: %v", elements)
 }

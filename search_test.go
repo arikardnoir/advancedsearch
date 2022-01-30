@@ -1,12 +1,25 @@
 package advancedsearch
 
-import "testing"
+import (
+	"testing"
+)
 
-func TestCompareWords(t *testing.T) {
-	resultado := CompareSingleWord("Mac", "Macbook")
-	esperado := true
+func TestCompareSingleWord(t *testing.T) {
+	result := CompareSingleWord("Mac", "Macbook")
+	waited := true
 
-	if resultado != esperado {
-		t.Errorf("esperado '%t', resultado '%t'", esperado, resultado)
+	if result != waited {
+		t.Errorf("Waited '%t', Result '%t'", waited, result)
+	}
+}
+
+func TestCompareMultipleWords(t *testing.T) {
+
+	arrayToPass := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
+	result, _ := CompareMultipleWords("Mo", arrayToPass)
+	waited := true
+
+	if result != waited {
+		t.Errorf("Waited '%t', Result '%t'", waited, result)
 	}
 }
