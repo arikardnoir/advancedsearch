@@ -1,4 +1,4 @@
-# advancedsearch
+# Advanced Search for Go
 `advancedsearch` is a package to help peoples make search while typing "char" by "char" in Golang. Actually he has two main functions, CompareSingleWord and CompareMultipleWords.
 
 ## How it works
