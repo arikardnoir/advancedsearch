@@ -44,18 +44,31 @@ CompareMultipleWords(query, words)
 
 Case:
 ``` bash
-query := "Mac"
-theWords := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
+func main () {
+  query := "Mac"
+  theWords := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
 
-result, elements := CompareMultipleWords(query, theWords)
+  result, elements := CompareMultipleWords(query, theWords)
+}
 ```
-In this case we can see that the user starts type "Mac" that match with the starts of some words in this array and in this case will return `true` and `["Mac", "Macaco", "Macarofe"]`.
+In this case we can see that the user starts type "Mac" that match with the starts of some words in this array and in this case will return `true` and array with elmenets.
 
 ## Usage
 ``` bash
+func main () {
   result := CompareSingleWord("Mac", "Macbook")
   theWords := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
   _, elements := CompareMultipleWords("Mac", arrayToPass)
 
   fmt.printf("Elements: %v", elements)
+}
+```
+`Output`
+``` bash
+  ["Macaco", "Macarofe", "Macbook"]
+```
+
+## Tests
+``` bash
+  go test
 ```
