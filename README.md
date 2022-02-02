@@ -57,7 +57,7 @@ In this case we can see that the user starts type "Mac" that match with the star
 ``` bash
 func main () {
   result := CompareSingleWord("Mac", "Macbook")
-  theWords := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
+  theWords := []string{"Macbook", "Mouse", "Macaco", "Balmaca", "Copo", "Macareef"}
   _, elements := CompareMultipleWords("Mac", arrayToPass)
 
   fmt.printf("Elements: %v", elements)
