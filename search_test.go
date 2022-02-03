@@ -5,7 +5,7 @@ import (
 )
 
 func TestCompareSingleWord(t *testing.T) {
-	result := CompareSingleWord("Mac", "Macbook")
+	result := CompareSingleWord("mac", "Macbook")
 	waited := true
 
 	if result != waited {
@@ -14,9 +14,8 @@ func TestCompareSingleWord(t *testing.T) {
 }
 
 func TestCompareMultipleWords(t *testing.T) {
-
 	arrayToPass := []string{"Macbook", "Mouse", "Macaco", "Balde", "Copo", "Macarofe"}
-	result, _ := CompareMultipleWords("Mo", arrayToPass)
+	result, _ := CompareMultipleWords("maca", arrayToPass)
 	waited := true
 
 	if result != waited {
